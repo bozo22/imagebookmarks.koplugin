@@ -5,7 +5,7 @@ local Const = {
         SCALE_FACTOR = 0,
         ROTATION = 0,
     },
-    VERSION = "1.0",
+    VERSION = "1.0.0",
     PAGE_TURN_BUTTON_MAP = {
         CYCLE = 0,
         ZOOM = 1,
