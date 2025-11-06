@@ -47,10 +47,10 @@ function ImageBookmarks:init()
         self:addNewImages()
         self:reloadImages()
 
-        -- Add bookmark button to imageviewer 
+        -- Add bookmark button to imageviewer
         patches.ImageViewer_patch()
     else
-        -- Remove bookmark button from imageviewer 
+        -- Remove bookmark button from imageviewer
         patches.ImageViewer_undo_patch()
     end
 end
@@ -61,8 +61,8 @@ function ImageBookmarks:onLocationUpdated(doc_path, new_doc_path, copy)
     local new_bookmark_dir = DocSettings:getSidecarDir(new_doc_path) .. "/imagebookmarks"
     local do_purge
 
-    if new_doc_path then                                                            
-        if G_reader_settings:readSetting("document_metadata_folder") ~= "hash" then 
+    if new_doc_path then
+        if G_reader_settings:readSetting("document_metadata_folder") ~= "hash" then
             local new_sidecar_dir
             if not new_sidecar_dir then
                 new_sidecar_dir = DocSettings:getSidecarDir(new_doc_path)
@@ -119,8 +119,8 @@ function ImageBookmarks:addToMainMenu(menu_items)
                     local const = require("const")
                     UIManager:show(InfoMessage:new({
                         text = "Image Bookmarks plugin for KOReader\n\nVersion: "
-                        .. const.VERSION
-                        .. "\n\nSee https://github.com/bozo22/imagebookmarks.koplugin.",
+                            .. const.VERSION
+                            .. "\n\nSee https://github.com/bozo22/imagebookmarks.koplugin.",
                     }))
                 end,
             },

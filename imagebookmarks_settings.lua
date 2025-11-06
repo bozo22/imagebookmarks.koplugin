@@ -105,7 +105,7 @@ function ImageBookmarksSettings:removeBookmark(filename, idx, silent, filepath)
     end
 
     local bookmarks = books[filename]["imagebookmarks"]
-    
+
     -- Remove entry from table
     table.remove(bookmarks, idx)
     self.settings:flush()
@@ -163,7 +163,8 @@ function ImageBookmarksSettings:moveBookmark(filename, idx_from, idx_to)
     return false
 end
 
-function ImageBookmarksSettings:updateBookmark(filename, idx, soft, center_x_ratio, center_y_ratio, scale_factor, rotation)
+function ImageBookmarksSettings:updateBookmark(filename, idx, soft, center_x_ratio, center_y_ratio, scale_factor,
+                                               rotation)
     local bookmarks = self:getBookmarks(filename)
     if bookmarks[idx] then
         if self:getRememberPanAndZoom() then
@@ -260,6 +261,5 @@ end
 function ImageBookmarksSettings:readSetting(key, default)
     return self.settings:readSetting(key, default)
 end
-
 
 return ImageBookmarksSettings

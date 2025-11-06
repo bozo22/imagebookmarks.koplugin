@@ -281,7 +281,7 @@ function ImageBookmarkViewer:init()
                                 end
                             end
                             local image_path = self.image_bookmarks.bookmark_dir ..
-                            "/" .. self.settings:getBookmarks(self.doc_path)[self.idx].image
+                                "/" .. self.settings:getBookmarks(self.doc_path)[self.idx].image
                             self.settings:removeBookmark(self.doc_path, self.idx, false, image_path)
                             UIManager:show(InfoMessage:new { text = _("Image bookmark removed!") })
                         end
